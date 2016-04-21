@@ -110,3 +110,46 @@ class FountainPencil extends FountainPen
     }
 
 }
+
+/**
+ * Class FountainPenColor
+ * make fountain pen with many colors
+ * from fountain pencil
+ */
+class FountainPenColor extends FountainPencil
+{
+    public $color;
+
+    /**
+     * FountainPenColor constructor.
+     * @param string $core
+     * @param string $penBody
+     * @param string $colorBody
+     * @param bool $pushButton
+     * @param string $color
+     */
+    function __construct($core = 'ink', $penBody = 'plastic',
+                         $colorBody = 'blue', $pushButton = true,
+                         $color = 'red')
+    {
+        parent::__construct($core, $penBody, $colorBody, $pushButton);
+        $this->color = $color;
+    }
+
+    function write()
+    {
+        echo "This " . $this->penBody . " pen writes by " . $this->core . " with " . $this->color . " color";
+        echo "<hr>";
+    }
+
+    function erase()
+    {
+        echo "This is a pen! You can't erase.. ";
+        echo "<hr>";
+    }
+
+    function changeColor($color)
+    {
+        $this->color = $color;
+    }
+}
