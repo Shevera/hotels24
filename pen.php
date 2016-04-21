@@ -77,3 +77,36 @@ class FountainPen extends SimplePen
     }
 
 }
+
+/**
+ * Class FountainPencil
+ * make fountain pencil from fountain pen
+ */
+class FountainPencil extends FountainPen
+{
+    /**
+     * FountainPencil constructor.
+     * @param string $core
+     * @param string $penBody
+     * @param string $colorBody
+     * @param bool $pushButton
+     */
+    function __construct($core = 'graphite', $penBody = 'wood',
+                         $colorBody = 'yellow', $pushButton = true)
+    {
+        parent::__construct($core, $penBody, $colorBody, $pushButton);
+    }
+
+    function write()
+    {
+        echo "This " . $this->penBody . " pencil writes by " . $this->core;
+        echo "<hr>";
+    }
+
+    function erase()
+    {
+        echo "Erase";
+        echo "<hr>";
+    }
+
+}
