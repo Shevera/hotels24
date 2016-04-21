@@ -32,3 +32,48 @@ class SimplePen
     }
 
 }
+
+/**
+ * Class FountainPen
+ * make fountain pen
+ */
+class FountainPen extends SimplePen
+{
+    public $pushButton;
+
+    /**
+     * FountainPen constructor.
+     * @param string $core
+     * @param string $penBody
+     * @param string $colorBody
+     * @param bool $pushButton
+     */
+    function __construct($core = 'ink', $penBody = 'plastic',
+                         $colorBody = 'black', $pushButton = true)
+    {
+        parent::__construct($core, $penBody, $colorBody);
+        $this->pushButton = $pushButton;
+    }
+
+
+    function write()
+    {
+        if($this->pushButton){
+            parent::write();
+        }else{
+            echo "Sorry you need click on the push button!";
+            echo "<hr>";
+        }
+    }
+
+    function pushOpen()
+    {
+        $this->pushButton = true;
+    }
+
+    function pushClose()
+    {
+        $this->pushButton = false;
+    }
+
+}
